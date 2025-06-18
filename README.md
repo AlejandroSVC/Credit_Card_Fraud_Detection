@@ -15,23 +15,23 @@ warnings.filterwarnings('ignore')
 %matplotlib inline
 ```
 ### 2. Load the csv data
-### i) Time attributes are in the terms of timestamp. ii) The class attribute shows 0 indicates non fraudulent transactions and 1 indicates fraudulent transactions. iii) The amount is in EUROs.
 ```
 df = pd.read_csv('creditcard.csv')
 df.head()
+# i) Time attributes are in the terms of timestamp. ii) The class attribute shows 0 indicates non fraudulent transactions
+# and 1 indicates fraudulent transactions. iii) The amount is in EUROs.
 ```
 ### 3. Data preprocessing
 ### 3.1. Datatype info
-### All the attributes (columns 0-29) are floats and the target (column 30) is Integer:
 ```
 df.info()
+# All the attributes (columns 0-29) are floats and the target (column 30) is Integer:
 ```
 ### 3.2. statistical info
 ```
 df.describe()
+# Due to the difference in the range (min) & (max) of columns, a standard scalar transformation will be performed later 
 ```
-### Due to the difference in the range (min) & (max) of columns, a standard scalar transformation will be performed later 
-
 ### 3.3. Check for null values
 ```
 df.isnull().sum()
@@ -40,17 +40,16 @@ df.isnull().sum()
 ### Explore the categorical column "Class"
 ```
 sns.countplot(df['Class'])
+# The number of fraudulent classes is low. Therefore, the data must be balanced for acceptable results.
 ```
-### The number of fraudulent classes is low. Therefore, the data must be balanced for acceptable results.
-
 ### 4. Define X and y variables
 ```
 X = df.drop(columns=['Class'], axis=1)
 y = df['Class']
 ```
 ### 5. Model Training and Testing
-### Splitting the Data
 ```
+# Splitting the Data
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, f1_score
 x_train, x_test, y_train, y_test = train_test_split(x_scaler, y, test_size=0.25, random_state=42)
