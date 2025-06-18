@@ -63,7 +63,7 @@ model = XGBClassifier(n_jobs=-1)
 ```
 model.fit(x_train, y_train)
 ```
-### 8. testing
+### 8. Predicting and testing
 ```
 y_pred = model.predict(x_test)
 print(classification_report(y_test, y_pred))
