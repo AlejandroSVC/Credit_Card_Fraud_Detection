@@ -39,10 +39,11 @@ df_balanced = pd.concat([
 # Undersample and save the new smaller dataset
 df_balanced.sample(frac=1, random_state=42).to_csv('creditcard_2.csv', index=False)
 print('Undersampled output dataset has been saved')
-'''
-### 4. Data preprocessing
-4.1. Datatype info
 ```
+### 4. Data preprocessing
+```
+4.1. Datatype info
+
 df.info()
 # All the attributes (columns 0-29) are floats and the target (column 30) is Integer:
 ```
@@ -50,7 +51,7 @@ Output:
 
 ![datainfo](docs/assets/images/datainfo.jpg)
 
-### 4.2. statistical info
+### 4.2. Statistical info
 ```
 df.describe()
 # Due to the difference in the range (min) & (max) of columns, a standard scalar transformation will be performed later 
