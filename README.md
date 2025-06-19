@@ -1,4 +1,4 @@
-# Credit Card Fraud Detection usging Machine Learning
+# Credit Card Fraud Detection using Machine Learning
 
 ![Banner](docs/assets/images/banner_delgado4.jpg)
 
