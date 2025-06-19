@@ -20,9 +20,6 @@ warnings.filterwarnings('ignore')
 ### 2. Load the csv data
 ```
 df = pd.read_csv('creditcard.csv')
-df.head()
-# i) Time attributes are in the terms of timestamp. ii) The class attribute shows 0 indicates non fraudulent transactions
-# and 1 indicates fraudulent transactions. iii) The amount is in EUROs.
 ```
 ### 3. Data preprocessing
 ### 3.1. Datatype info
