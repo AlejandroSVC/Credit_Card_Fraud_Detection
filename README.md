@@ -43,7 +43,7 @@ print('Undersampled output dataset has been saved')
 ### 4. Data info
 ```
 df.info()
-
+```
 Output:
 
 ![datainfo](docs/assets/images/datainfo.jpg)
