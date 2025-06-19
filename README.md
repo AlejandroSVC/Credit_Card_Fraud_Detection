@@ -2,6 +2,9 @@
 
 ![Banner](docs/assets/images/banner_delgado4.jpg)
 
+This script performs a machine learning method to detect credit card fraudulent transactions. 
+The dataset contains 284,807 credit card transactions made in 2013 in Europe, with 492 frauds. The variables are not the original due to confidentiality reasons, but 28 new ones from a principal component analysis (PCA) data reduction. Only two features were not transformed: 'Time' and 'Amount'. The target variable is 'Class' and has a value 1 (fraud) or 0 (not fraud). The dataset can be found [here](https://tinyurl.com/4zvuh435/).
+
 ### Python code:
 
 ### 1. Import libraries
