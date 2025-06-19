@@ -40,30 +40,14 @@ df_balanced = pd.concat([
 df_balanced.sample(frac=1, random_state=42).to_csv('creditcard_2.csv', index=False)
 print('Undersampled output dataset has been saved')
 ```
-### 4. Data preprocessing
+### 4. Data info
 ```
-# 4.1. Datatype info
-
 df.info()
 ```
 Output:
 
 ![datainfo](docs/assets/images/datainfo.jpg)
 
-### 4.2. Statistical info
-```
-df.describe()
-# Due to the difference in the range (min) & (max) of columns, a standard scalar transformation will be performed later 
-```
-### 4.3. Check for null values
-```
-df.isnull().sum()
-```
-### 4.4. Exploratory Data Analysis
-### Explore the categorical column "Class"
-```
-sns.countplot(df['Class'])
-# The number of fraudulent classes is low. Therefore, the data must be balanced for acceptable results.
 ```
 ### 5. Define X and y variables
 ```
