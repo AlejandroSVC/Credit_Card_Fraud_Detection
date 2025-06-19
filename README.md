@@ -48,7 +48,6 @@ Output:
 
 ![datainfo](docs/assets/images/datainfo.jpg)
 
-```
 ### 5. Define X and y variables
 ```
 X = df.drop(columns=['Class'], axis=1)
