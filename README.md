@@ -42,10 +42,9 @@ print('Undersampled output dataset has been saved')
 ```
 ### 4. Data preprocessing
 ```
-4.1. Datatype info
+# 4.1. Datatype info
 
 df.info()
-# All the attributes (columns 0-29) are floats and the target (column 30) is Integer:
 ```
 Output:
 
