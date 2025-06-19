@@ -75,3 +75,4 @@ y_pred = model.predict(x_test)
 print(classification_report(y_test, y_pred))
 print("F1 Score:",f1_score(y_test, y_pred))
 ```
+![Results](docs/assets/images/reults.jpg)
