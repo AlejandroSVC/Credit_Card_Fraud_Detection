@@ -30,6 +30,10 @@ df.head()
 df.info()
 # All the attributes (columns 0-29) are floats and the target (column 30) is Integer:
 ```
+Output:
+
+![datainfo](docs/assets/images/datainfo.jpg)
+
 ### 3.2. statistical info
 ```
 df.describe()
