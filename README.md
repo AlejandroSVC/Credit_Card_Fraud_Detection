@@ -24,7 +24,7 @@ df = pd.read_csv('creditcard.csv')
 # The dataset is highly unbalanced, as the positive Class values (frauds) account for only 0.172% of 
 # transactions. Therefore, cases with Class = 0 will be undersampled:
 ```
-### 3. # Undersampling the imbalanced dataset:
+### 3. Undersampling the imbalanced dataset:
 ```
 # Find class counts
 counts = df['Class'].value_counts()
@@ -41,7 +41,7 @@ df_balanced.sample(frac=1, random_state=42).to_csv('creditcard_2.csv', index=Fal
 print('Undersampled output dataset has been saved')
 '''
 ### 4. Data preprocessing
-### 4.1. Datatype info
+4.1. Datatype info
 ```
 df.info()
 # All the attributes (columns 0-29) are floats and the target (column 30) is Integer:
