@@ -1,13 +1,13 @@
-# Credit Card Fraud Detection using Machine Learning
+# Detección de fraudes con tarjetas de crédito mediante machine learning
 
 ![Banner](docs/assets/images/banner_delgado4.jpg)
 
-This script performs a machine learning method to detect credit card fraudulent transactions. 
-The dataset contains 284,807 credit card transactions made in 2013 in Europe, with 492 frauds. The variables are not the original due to confidentiality reasons, but 28 new ones from a principal component analysis (PCA) data reduction. Only two features were not transformed: 'Time' and 'Amount'. The target variable is 'Class' and has a value 1 (fraud) or 0 (not fraud). The dataset can be found [here](https://tinyurl.com/4zvuh435/).
+Este script ejecuta un método de aprendizaje automático para detectar transacciones fraudulentas con tarjetas de crédito.
+El conjunto de datos contiene 284.807 transacciones con tarjetas de crédito realizadas en 2013 en Europa, con 492 fraudes. Las variables no son las originales por motivos de confidencialidad, sino 28 nuevas derivadas de una reducción de datos mediante análisis de componentes principales (ACP). Solo dos características no se transformaron: «Tiempo» e «Importe». La variable objetivo es «Clase» y tiene un valor de 1 (fraude) o 0 (no fraude). El conjunto de datos se puede encontrar [aquí](https://tinyurl.com/4zvuh435/).
 
-### Python code:
+### Código Python:
 
-### 1. Import libraries
+### 1. Importar bibliotecas
 ```
 import pandas as pd
 import numpy as np
@@ -17,26 +17,25 @@ import warnings
 warnings.filterwarnings('ignore')
 %matplotlib inline
 ```
-### 2. Load the csv data
+### 2. Cargar la base de datos en formato csv
 ```
 df = pd.read_csv('creditcard.csv')
+```
+El conjunto de datos presenta un alto desequilibrio, ya que los valores de clase positivos (fraudes) representan solo el 0,172 % de las transacciones. Por lo tanto, los casos con clase = 0 estarán submuestreados.
 
-# The dataset is highly unbalanced, as the positive Class values (frauds) account for only 0.172% of 
-# transactions. Therefore, cases with Class = 0 will be undersampled:
+### 3. Submuestreo del conjunto de datos desbalanceados:
 ```
-### 3. Undersampling the imbalanced dataset:
-```
-# Find class counts
+# Determinar las frecuencias de la clase
 counts = df['Class'].value_counts()
 min_count = counts.min()
 
-# Undersampling function
+# Función de submuestreo
 df_balanced = pd.concat([
     df[df['Class'] == cls].sample(n=min_count, random_state=42)
     for cls in counts.index
 ])
 
-# Undersample and save the new smaller dataset
+# Submuestrear y guardar el nuevo conjunto de datos más pequeño
 df_balanced.sample(frac=1, random_state=42).to_csv('creditcard_2.csv', index=False)
 print('Undersampled output dataset has been saved')
 ```
@@ -48,28 +47,28 @@ Output:
 
 ![datainfo](docs/assets/images/datainfo.jpg)
 
-### 5. Define X and y variables
+### 5. Definir las variables X e y
 ```
 X = df.drop(columns=['Class'], axis=1)
 y = df['Class']
 ```
-### 6. Model Training and Testing
+### 6. Entrenamiento y testeo del modelo
 ```
-# Splitting the Data
+# Dividir los datos
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, f1_score
 x_train, x_test, y_train, y_test = train_test_split(x_scaler, y, test_size=0.25, random_state=42)
 ```
-### 7. XGBoost classification model
+### 7. Modelo de clasificación XGBoost
 ```
 from xgboost import XGBClassifier
 model = XGBClassifier(n_jobs=-1)
 ```
-### 8. Training the model
+### 8. Entrenamiento del modelo
 ```
 model.fit(x_train, y_train)
 ```
-### 9. Predicting and testing
+### 9. Predicción y testeo
 ```
 y_pred = model.predict(x_test)
 print(classification_report(y_test, y_pred))
