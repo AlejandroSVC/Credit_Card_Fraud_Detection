@@ -43,7 +43,7 @@ print('Undersampled output dataset has been saved')
 ```
 df.info()
 ```
-Output:
+Resultado:
 
 ![datainfo](docs/assets/images/datainfo.jpg)
 
@@ -75,3 +75,5 @@ print(classification_report(y_test, y_pred))
 print("F1 Score:",f1_score(y_test, y_pred))
 ```
 ![Results](docs/assets/images/results.jpg)
+
+Conclusión: el modelo XGBoost presenta un alto nivel de poder predictivo de situaciones de fraude bancario mediante uso indebido de una tarjeta de crédito.
