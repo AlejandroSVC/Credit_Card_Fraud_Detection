@@ -1,4 +1,4 @@
-# Detección de fraudes con tarjetas de crédito mediante machine learning
+# Detección de Fraudes con Tarjetas de Crédito mediante Machine Learning
 
 ![Banner](docs/assets/images/banner_delgado4.jpg)
 
