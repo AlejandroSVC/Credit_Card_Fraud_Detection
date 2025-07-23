@@ -76,4 +76,6 @@ print("F1 Score:",f1_score(y_test, y_pred))
 ```
 ![Results](docs/assets/images/results.jpg)
 
-Conclusión: el modelo XGBoost presenta un alto nivel de poder predictivo de situaciones de fraude bancario mediante uso indebido de una tarjeta de crédito.
+### Conclusión:
+
+el modelo XGBoost presenta un alto nivel de poder predictivo de situaciones de fraude bancario mediante uso indebido de una tarjeta de crédito.
